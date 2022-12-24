@@ -1,5 +1,7 @@
-$RepeatedMsgReduction on
+{{ $port  := .Env.RSYSLOG_PORT |default "10514" }}
+{{ $tport  := .Env.RSYSLOG_TCP_PORT |default $port }}
+{{ $uport  := .Env.RSYSLOG_UDP_PORT |default $port }}
 $ModLoad imudp
-$UDPServerRun 514
+$UDPServerRun {{$uport}}
 $ModLoad imtcp
-$InputTCPServerRun 514
+$InputTCPServerRun {{$tport}}
