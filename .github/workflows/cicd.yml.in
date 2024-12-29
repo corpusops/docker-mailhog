@@ -70,6 +70,6 @@ jobs:
         # we span them onto N jobs
         - "zleftover:1/1"
 on:
-  push:
-  workflow_dispatch:
-  schedule: [{cron: '1 0 4,6,8,18,20,22 * *'}]
+  # push:
+  # workflow_dispatch:
+  # schedule: [{cron: '1 0 4,6,8,18,20,22 * *'}]
